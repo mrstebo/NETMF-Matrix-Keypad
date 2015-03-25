@@ -9,17 +9,17 @@ namespace NETMF_Matrix_Keypad
     {
         private static readonly Cpu.Pin[] ColumnPins =
         {
-            (Cpu.Pin) FEZ_Pin.Digital.Di22,
-            (Cpu.Pin) FEZ_Pin.Digital.Di20,
-            (Cpu.Pin) FEZ_Pin.Digital.Di24
+            (Cpu.Pin) FEZ_Pin.Digital.Di25,
+            (Cpu.Pin) FEZ_Pin.Digital.Di21,
+            (Cpu.Pin) FEZ_Pin.Digital.Di29
         };
 
         private static readonly Cpu.Pin[] RowPins =
         {
-            (Cpu.Pin) FEZ_Pin.Digital.Di21,
-            (Cpu.Pin) FEZ_Pin.Digital.Di26,
-            (Cpu.Pin) FEZ_Pin.Digital.Di25,
-            (Cpu.Pin) FEZ_Pin.Digital.Di23
+            (Cpu.Pin) FEZ_Pin.Digital.Di23,
+            (Cpu.Pin) FEZ_Pin.Digital.Di33,
+            (Cpu.Pin) FEZ_Pin.Digital.Di31,
+            (Cpu.Pin) FEZ_Pin.Digital.Di27
         };
 
         private static readonly char[][] Keypad =
@@ -34,6 +34,8 @@ namespace NETMF_Matrix_Keypad
         {
             try
             {
+                Debug.EnableGCMessages(false);
+
                 var keypad = new Keypad(Keypad, RowPins, ColumnPins)
                 {
                     HoldTime = 200
